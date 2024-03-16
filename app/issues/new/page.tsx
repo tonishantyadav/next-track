@@ -1,7 +1,12 @@
-import React from "react";
+import React from 'react'
+import NewIssueForm from '../components/NewIssueForm'
 
 const page = () => {
-  return <div>page</div>;
-};
+  return (
+    <div>
+      <NewIssueForm />
+    </div>
+  )
+}
 
-export default page;
+export default page

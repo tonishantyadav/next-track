@@ -1,6 +1,7 @@
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import React from "react";
+import { Button } from '@/components/ui/button'
+import Link from 'next/link'
+import React from 'react'
+import NewIssueForm from './components/NewIssueForm'
 
 const page = () => {
   return (
@@ -11,7 +12,7 @@ const page = () => {
         </Button>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default page;
+export default page
