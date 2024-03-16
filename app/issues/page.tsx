@@ -1,9 +1,10 @@
 import { Button } from '@/components/ui/button'
+import prisma from '@/prisma/client'
 import Link from 'next/link'
-import React from 'react'
-import NewIssueForm from './components/NewIssueForm'
+import IssuesTable from './components/IssuesTable'
 
-const page = () => {
+const page = async () => {
+  const issues = await prisma.issue.findMany()
   return (
     <div>
       <div className="flex justify-end">
@@ -11,6 +12,7 @@ const page = () => {
           <Link href="/issues/new">Add issue</Link>
         </Button>
       </div>
+      <IssuesTable issues={issues} />
     </div>
   )
 }
