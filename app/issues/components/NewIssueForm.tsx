@@ -83,7 +83,7 @@ const NewIssueForm = () => {
                 Description
               </FormLabel>
               <FormControl>
-                <div className="p-2 border rounded-lg">
+                <div>
                   <MarkdownEditor onChange={handleDescriptionChange} />
                 </div>
               </FormControl>

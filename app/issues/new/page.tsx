@@ -1,7 +1,7 @@
-import React from 'react'
 import NewIssueForm from '../components/NewIssueForm'
 
-const page = () => {
+
+const page = async () => {
   return (
     <div>
       <NewIssueForm />
