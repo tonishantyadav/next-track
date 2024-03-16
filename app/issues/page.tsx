@@ -5,6 +5,7 @@ import IssuesTable from './components/IssuesTable'
 
 const page = async () => {
   const issues = await prisma.issue.findMany()
+
   return (
     <div>
       <div className="flex justify-end">
