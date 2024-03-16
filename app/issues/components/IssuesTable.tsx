@@ -10,6 +10,7 @@ import {
 import { Issue } from '@prisma/client'
 import React from 'react'
 import IssueStatusBadge from './IssueStatusBadge'
+import Link from 'next/link'
 
 interface Props {
   issues: Issue[]
@@ -18,7 +19,7 @@ interface Props {
 const IssuesTable = ({ issues }: Props) => {
   return (
     <div className="border rounded-lg my-5">
-      <Table className="w-full">
+      <Table className="w-full my-2">
         <TableCaption>A list of recent issues.</TableCaption>
         <TableHeader>
           <TableRow className="flex">
@@ -29,8 +30,15 @@ const IssuesTable = ({ issues }: Props) => {
         </TableHeader>
         <TableBody>
           {issues.map((issue, index) => (
-            <TableRow key={index} className="flex">
-              <TableCell className="flex-1 ">{issue.title}</TableCell>
+            <TableRow className="flex" key={index}>
+              <TableCell className="flex-1">
+                <Link
+                  className="hover:text-slate-400"
+                  href={`issues/${issue.id}`}
+                >
+                  {issue.title}
+                </Link>
+              </TableCell>
               <TableCell className="flex-1">
                 <IssueStatusBadge status={issue.status} />
               </TableCell>
