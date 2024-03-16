@@ -1,8 +1,7 @@
+import MarkdownPreview from '@/components/MarkdownPreview'
 import prisma from '@/prisma/client'
 import { notFound } from 'next/navigation'
 import IssueStatusBadge from '../components/IssueStatusBadge'
-import MarkdownPreview from '@/components/MarkdownPreview'
-import Divider from '@/components/ui/divider'
 
 interface Props {
   params: {

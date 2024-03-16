@@ -18,8 +18,8 @@ interface Props {
 
 const IssuesTable = ({ issues }: Props) => {
   return (
-    <div className="border rounded-lg my-5">
-      <Table className="w-full my-2">
+    <div className="my-5 rounded-lg border">
+      <Table className="mb-2 w-full">
         <TableCaption>A list of recent issues.</TableCaption>
         <TableHeader>
           <TableRow className="flex">
