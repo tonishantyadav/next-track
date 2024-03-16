@@ -9,6 +9,7 @@ import {
 } from '@/components/ui/table'
 import { Issue } from '@prisma/client'
 import React from 'react'
+import IssueStatusBadge from './IssueStatusBadge'
 
 interface Props {
   issues: Issue[]
@@ -30,7 +31,9 @@ const IssuesTable = ({ issues }: Props) => {
           {issues.map((issue, index) => (
             <TableRow key={index} className="flex">
               <TableCell className="flex-1 ">{issue.title}</TableCell>
-              <TableCell className="flex-1">{issue.status}</TableCell>
+              <TableCell className="flex-1">
+                <IssueStatusBadge status={issue.status} />
+              </TableCell>
               <TableCell className="flex-1">
                 {issue.created_at.toDateString()}
               </TableCell>
