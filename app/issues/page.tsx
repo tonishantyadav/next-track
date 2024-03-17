@@ -1,18 +1,15 @@
-import { Button } from '@/components/ui/button'
 import prisma from '@/prisma/client'
-import Link from 'next/link'
+import { AddIssueButton } from './components/IssueAction'
 import IssuesTable from './components/IssuesTable'
+import delay from 'delay'
 
 const page = async () => {
   const issues = await prisma.issue.findMany()
+  await delay(2000)
 
   return (
     <div>
-      <div className="flex justify-end">
-        <Button>
-          <Link href="/issues/new">Add issue</Link>
-        </Button>
-      </div>
+      <AddIssueButton />
       <IssuesTable issues={issues} />
     </div>
   )
