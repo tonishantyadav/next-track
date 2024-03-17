@@ -1,4 +1,4 @@
-import { AddIssueButton, IssuesTable } from '@/app/issues/_components'
+import { IssueAddButton, IssuesTable } from '@/app/issues/_components'
 import prisma from '@/prisma/client'
 
 const IssuesPage = async () => {
@@ -6,7 +6,7 @@ const IssuesPage = async () => {
 
   return (
     <div>
-      <AddIssueButton />
+      <IssueAddButton />
       <IssuesTable issues={issues} />
     </div>
   )

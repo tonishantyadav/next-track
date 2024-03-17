@@ -97,4 +97,4 @@ const IssueForm = ({ issue }: { issue?: Issue }) => {
   )
 }
 
-export { IssueForm as NewIssueForm }
+export { IssueForm }

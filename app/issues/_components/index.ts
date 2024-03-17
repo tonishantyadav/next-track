@@ -1,4 +1,4 @@
-export { AddIssueButton } from './IssueAction'
+export { AddIssueButton as IssueAddButton } from './IssueAction'
 export { IssueStatusBadge } from './IssueStatusBadge'
 export { IssuesTable } from './IssuesTable'
-export { NewIssueForm } from './IssueForm'
+export { IssueForm } from './IssueForm'

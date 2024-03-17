@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui'
 import Link from 'next/link'
 
-const AddIssueButton = () => {
+const IssueAddButton = () => {
   return (
     <div className="flex justify-end">
       <Button>
@@ -11,4 +11,4 @@ const AddIssueButton = () => {
   )
 }
 
-export { AddIssueButton }
+export { IssueAddButton as AddIssueButton }
