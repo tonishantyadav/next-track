@@ -1,8 +1,8 @@
 'use client'
 
-import { NewIssueSchema } from '@/app/validation'
+import { IssueSchema } from '@/app/validation'
 import MarkdownEditor from '@/components/MarkdownEditor'
-import { Button } from '@/components/ui/button'
+import { Button, Input, Spinner, useToast } from '@/components/ui'
 import {
   Form,
   FormControl,
@@ -11,24 +11,22 @@ import {
   FormLabel,
   FormMessage,
 } from '@/components/ui/form'
-import { Input } from '@/components/ui/input'
-import Spinner from '@/components/ui/spinner'
-import { useToast } from '@/components/ui/use-toast'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { Issue } from '@prisma/client'
 import axios from 'axios'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 
-type NewIssueFormData = z.infer<typeof NewIssueSchema>
+type IssueFormData = z.infer<typeof IssueSchema>
 
-const NewIssueForm = () => {
-  const form = useForm<NewIssueFormData>({
-    resolver: zodResolver(NewIssueSchema),
+const IssueForm = ({ issue }: { issue?: Issue }) => {
+  const form = useForm<IssueFormData>({
+    resolver: zodResolver(IssueSchema),
     defaultValues: {
-      title: '',
-      description: '',
+      title: issue?.title || '',
+      description: issue?.description || '',
     },
   })
   const router = useRouter()
@@ -39,7 +37,7 @@ const NewIssueForm = () => {
     form.setValue('description', value)
   }
 
-  const onSubmit = async (data: NewIssueFormData) => {
+  const onSubmit = async (data: IssueFormData) => {
     try {
       setIsSubmitting(true)
       await axios.post('/api/issues', data)
@@ -99,4 +97,4 @@ const NewIssueForm = () => {
   )
 }
 
-export default NewIssueForm
+export { IssueForm as NewIssueForm }

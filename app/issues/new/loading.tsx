@@ -1,6 +1,6 @@
-import { Skeleton } from '@/components/ui/skeleton'
+import { Skeleton } from '@/components/ui'
 
-const LoadingNewIssuePage = () => {
+const NewIssuePageLoading = () => {
   return (
     <div className="flex flex-col space-y-8">
       <div className="flex flex-col space-y-3">
@@ -10,7 +10,7 @@ const LoadingNewIssuePage = () => {
       <div className="flex flex-col space-y-3">
         <Skeleton className="h-4 w-[100px] rounded-lg" />
         <div>
-          <Skeleton className="max-w-full h-svh rounded-lg" />
+          <Skeleton className="h-svh max-w-full rounded-lg" />
         </div>
       </div>
       <div className="flex justify-end">
@@ -20,4 +20,4 @@ const LoadingNewIssuePage = () => {
   )
 }
 
-export default LoadingNewIssuePage
+export default NewIssuePageLoading

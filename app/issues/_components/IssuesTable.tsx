@@ -1,15 +1,14 @@
+import { IssueStatusBadge } from '@/app/issues/_components'
 import {
   Table,
+  TableBody,
   TableCaption,
+  TableCell,
+  TableHead,
   TableHeader,
   TableRow,
-  TableHead,
-  TableBody,
-  TableCell,
-} from '@/components/ui/table'
+} from '@/components/ui'
 import { Issue } from '@prisma/client'
-import React from 'react'
-import IssueStatusBadge from './IssueStatusBadge'
 import Link from 'next/link'
 
 interface Props {
@@ -53,4 +52,4 @@ const IssuesTable = ({ issues }: Props) => {
   )
 }
 
-export default IssuesTable
+export { IssuesTable }

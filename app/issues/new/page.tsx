@@ -1,8 +1,6 @@
-import NewIssueForm from '../components/NewIssueForm'
-import delay from 'delay'
+import { NewIssueForm } from '@/app/issues/_components'
 
-const page = async () => {
-  await delay(2000)
+const NewIssuePage = async () => {
   return (
     <div>
       <NewIssueForm />
@@ -10,4 +8,4 @@ const page = async () => {
   )
 }
 
-export default page
+export default NewIssuePage

@@ -1,7 +1,7 @@
+import { IssueStatusBadge } from '@/app/issues/_components'
 import MarkdownPreview from '@/components/MarkdownPreview'
 import prisma from '@/prisma/client'
 import { notFound } from 'next/navigation'
-import IssueStatusBadge from '../components/IssueStatusBadge'
 
 interface Props {
   params: {
