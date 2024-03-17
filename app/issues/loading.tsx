@@ -8,13 +8,13 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui'
-import { AddIssueButton } from './_components/IssueAction'
+import { IssueAddButton } from './_components/IssueAction'
 
 const LoadingIssuePage = () => {
   const issues = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
   return (
     <>
-      <AddIssueButton />
+      <IssueAddButton />
       <div className="my-5 rounded-lg border">
         <Table className="w-full">
           <TableCaption>A list of recent issues.</TableCaption>

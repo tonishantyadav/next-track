@@ -6,7 +6,7 @@ const MarkdownPreview = ({ value }: { value: string }) => {
   return (
     <div>
       <MarkdownEditor.Markdown
-        className="prose rounded-xl bg-gray-800/20 p-5 text-sm dark:prose-invert prose-a:text-blue-600 prose-img:rounded-xl"
+        className="prose max-w-lg rounded-xl bg-gray-800/20 p-5 text-sm dark:prose-invert prose-a:text-blue-600 prose-img:rounded-xl"
         source={value}
         rehypeRewrite={(node: any, index, parent: any) => {
           if (

@@ -39,8 +39,9 @@ const IssueForm = ({ issue }: { issue?: Issue }) => {
 
   const onSubmit = async (data: IssueFormData) => {
     try {
+      if (issue) await axios.patch(`/api/issues/${issue.id}`, data)
+      else await axios.post('/api/issues', data)
       setIsSubmitting(true)
-      await axios.post('/api/issues', data)
       router.push('/issues')
     } catch (error) {
       setIsSubmitting(false)
@@ -82,7 +83,10 @@ const IssueForm = ({ issue }: { issue?: Issue }) => {
               </FormLabel>
               <FormControl>
                 <div>
-                  <MarkdownEditor onChange={handleDescriptionChange} />
+                  <MarkdownEditor
+                    value={issue?.description}
+                    onChange={handleDescriptionChange}
+                  />
                 </div>
               </FormControl>
               <FormMessage />

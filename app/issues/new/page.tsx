@@ -1,6 +1,6 @@
 import { IssueForm } from '@/app/issues/_components'
 
-const NewIssuePage = async () => {
+const IssueAddPage = async () => {
   return (
     <div>
       <IssueForm />
@@ -8,4 +8,4 @@ const NewIssuePage = async () => {
   )
 }
 
-export default NewIssuePage
+export default IssueAddPage

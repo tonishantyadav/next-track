@@ -8,14 +8,17 @@ const BaseMarkdownEditor = dynamic(
 )
 
 const MarkdownEditor = ({
+  value,
   onChange,
 }: {
+  value?: string
   onChange: (value: string) => void
 }) => {
   return (
     <BaseMarkdownEditor
       placeholder="Describe the issue in detail"
       height="500px"
+      value={value}
       onChange={onChange}
     />
   )
