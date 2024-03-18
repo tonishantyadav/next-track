@@ -19,7 +19,7 @@ export const IssueEditButton = ({ issueId }: { issueId: number }) => {
   return (
     <div className="my-2">
       <Link href={`/issues/${issueId}/edit`}>
-        <Button>
+        <Button className="w-full">
           <Pencil2Icon className="mr-2" /> Edit Issue
         </Button>
       </Link>
@@ -30,7 +30,7 @@ export const IssueEditButton = ({ issueId }: { issueId: number }) => {
 export const IssueDeleteButton = ({ issueId }: { issueId: number }) => {
   return (
     <div className="my-2">
-      <Button variant="destructive">
+      <Button variant="destructive" className="w-full">
         <TrashIcon className="mr-2" /> Delete Issue
       </Button>
     </div>
