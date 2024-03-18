@@ -1,5 +1,6 @@
-import { IssueForm } from '@/app/issues/_components/IssueForm'
+import { IssueSkeletonLoading } from '@/app/issues/_components'
 import prisma from '@/prisma/client'
+import dynamic from 'next/dynamic'
 import { notFound } from 'next/navigation'
 
 interface Props {
@@ -7,6 +8,11 @@ interface Props {
     id: string
   }
 }
+
+const IssueForm = dynamic(() => import('@/app/issues/_components/IssueForm'), {
+  ssr: false,
+  loading: () => <IssueSkeletonLoading />,
+})
 
 const IssueEditPage = async ({ params }: Props) => {
   const issue = await prisma.issue.findUnique({

@@ -2,7 +2,7 @@ import { Button } from '@/components/ui'
 import { Pencil2Icon, PlusIcon, TrashIcon } from '@radix-ui/react-icons'
 import Link from 'next/link'
 
-const IssueAddButton = () => {
+export const IssueAddButton = () => {
   return (
     <div className="flex justify-end">
       <Link href="/issues/new">
@@ -15,7 +15,7 @@ const IssueAddButton = () => {
   )
 }
 
-const IssueEditButton = ({ issueId }: { issueId: number }) => {
+export const IssueEditButton = ({ issueId }: { issueId: number }) => {
   return (
     <div className="my-2">
       <Link href={`/issues/${issueId}/edit`}>
@@ -27,7 +27,7 @@ const IssueEditButton = ({ issueId }: { issueId: number }) => {
   )
 }
 
-const IssueDeleteButton = ({ issueId }: { issueId: number }) => {
+export const IssueDeleteButton = ({ issueId }: { issueId: number }) => {
   return (
     <div className="my-2">
       <Button variant="destructive">
@@ -36,5 +36,3 @@ const IssueDeleteButton = ({ issueId }: { issueId: number }) => {
     </div>
   )
 }
-
-export { IssueAddButton, IssueEditButton, IssueDeleteButton }

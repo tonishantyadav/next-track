@@ -52,4 +52,4 @@ const IssuesTable = ({ issues }: Props) => {
   )
 }
 
-export { IssuesTable }
+export default IssuesTable

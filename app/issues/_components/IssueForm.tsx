@@ -102,4 +102,4 @@ const IssueForm = ({ issue }: { issue?: Issue }) => {
   )
 }
 
-export { IssueForm }
+export default IssueForm

@@ -9,13 +9,6 @@ export {
   TableRow,
 } from './table'
 
-export { Badge, badgeVariants } from './badge'
-export { Button, buttonVariants } from './button'
-export { Divider } from './divider'
-export { Input } from './input'
-export { Label } from './label'
-export { Skeleton } from './skeleton'
-export { Spinner } from './spinner'
 export {
   Toast,
   ToastAction,
@@ -27,8 +20,6 @@ export {
   type ToastActionElement,
   type ToastProps,
 } from './toast'
-export { Toaster } from './toaster'
-export { toast, useToast } from './use-toast'
 
 export {
   DropdownMenu,
@@ -47,3 +38,13 @@ export {
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from './dropdown-menu'
+
+export { Badge, badgeVariants } from './badge'
+export { Button, buttonVariants } from './button'
+export { Divider } from './divider'
+export { Input } from './input'
+export { Label } from './label'
+export { Skeleton } from './skeleton'
+export { Spinner } from './spinner'
+export { Toaster } from './toaster'
+export { toast, useToast } from './use-toast'

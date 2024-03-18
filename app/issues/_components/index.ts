@@ -1,9 +1,6 @@
-export {
-  IssueAddButton,
-  IssueEditButton,
-  IssueDeleteButton,
-} from './IssueAction'
-export { IssueForm } from './IssueForm'
-export { IssuePreview } from './IssuePreview'
-export { IssueStatusBadge } from './IssueStatusBadge'
-export { IssuesTable } from './IssuesTable'
+export * from './IssueAction'
+export { default as IssueForm } from './IssueForm'
+export { default as IssuePreview } from './IssuePreview'
+export { default as IssueStatusBadge } from './IssueStatusBadge'
+export { default as IssuesTable } from './IssuesTable'
+export { default as IssueSkeletonLoading } from './IssueSkeletonLoading'

@@ -15,4 +15,4 @@ const IssuePreview = ({ issue }: { issue: Issue }) => {
   )
 }
 
-export { IssuePreview }
+export default IssuePreview

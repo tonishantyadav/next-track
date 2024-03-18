@@ -14,4 +14,4 @@ const IssueStatusBadge = ({ status }: { status: Status }) => {
   return <Badge variant={variant}>{label}</Badge>
 }
 
-export { IssueStatusBadge }
+export default IssueStatusBadge
