@@ -39,6 +39,20 @@ export {
   DropdownMenuTrigger,
 } from './dropdown-menu'
 
+export {
+  AlertDialog,
+  AlertDialogPortal,
+  AlertDialogOverlay,
+  AlertDialogTrigger,
+  AlertDialogContent,
+  AlertDialogHeader,
+  AlertDialogFooter,
+  AlertDialogTitle,
+  AlertDialogDescription,
+  AlertDialogAction,
+  AlertDialogCancel,
+} from './alert-dialog'
+
 export { Badge, badgeVariants } from './badge'
 export { Button, buttonVariants } from './button'
 export { Divider } from './divider'
