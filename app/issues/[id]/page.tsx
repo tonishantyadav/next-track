@@ -5,6 +5,7 @@ import {
 } from '@/app/issues/_components'
 import prisma from '@/prisma/client'
 import { notFound } from 'next/navigation'
+import delay from 'delay'
 
 interface Props {
   params: {
@@ -16,6 +17,8 @@ const IssueDetailPage = async ({ params }: Props) => {
   const issue = await prisma.issue.findUnique({
     where: { id: parseInt(params.id) },
   })
+
+  await delay(20000)
 
   if (!issue) notFound()
 

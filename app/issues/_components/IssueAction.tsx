@@ -56,8 +56,8 @@ export const IssueDeleteButton = ({ issueId }: { issueId: number }) => {
       router.push('/issues')
       router.refresh()
     } catch (error) {
-      setIsError(true)
       setIsDeleting(false)
+      setIsError(true)
     }
   }
 
@@ -65,9 +65,21 @@ export const IssueDeleteButton = ({ issueId }: { issueId: number }) => {
     <>
       <AlertDialog>
         <AlertDialogTrigger asChild>
-          <Button variant="destructive" className="w-full">
-            <TrashIcon className="mr-2" /> Delete Issue
-          </Button>
+          <div className="mt-2">
+            <Button
+              variant="destructive"
+              className="w-full"
+              disabled={isDeleting}
+            >
+              {isDeleting ? (
+                <Spinner />
+              ) : (
+                <>
+                  <TrashIcon className="mr-2" /> Delete Issue
+                </>
+              )}
+            </Button>
+          </div>
         </AlertDialogTrigger>
         <AlertDialogContent>
           <AlertDialogHeader>
@@ -78,13 +90,8 @@ export const IssueDeleteButton = ({ issueId }: { issueId: number }) => {
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
-            <AlertDialogCancel>
-              {isDeleting ? <Spinner /> : 'Cancel'}
-            </AlertDialogCancel>
-            <AlertDialogAction
-              disabled={isDeleting}
-              onClick={handleDeleteIssue}
-            >
+            <AlertDialogCancel>Cancel</AlertDialogCancel>
+            <AlertDialogAction onClick={handleDeleteIssue}>
               Continue
             </AlertDialogAction>
           </AlertDialogFooter>
