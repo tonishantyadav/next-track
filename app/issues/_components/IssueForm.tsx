@@ -83,7 +83,7 @@ const IssueForm = ({ issue }: { issue?: Issue }) => {
                 Description
               </FormLabel>
               <FormControl>
-                <div>
+                <div className="rounded-lg border">
                   <MarkdownEditor
                     value={issue?.description}
                     onChange={handleDescriptionChange}

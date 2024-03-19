@@ -20,6 +20,7 @@ const MarkdownEditor = ({
       height="500px"
       value={value}
       onChange={onChange}
+      className="m-3"
     />
   )
 }
