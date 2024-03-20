@@ -3,6 +3,7 @@ import {
   IssueDeleteButton,
   IssueEditButton,
   IssuePreview,
+  SelectAssignee,
 } from '@/app/issues/_components'
 import prisma from '@/prisma/client'
 import { getServerSession } from 'next-auth'
@@ -30,6 +31,7 @@ const IssueDetailPage = async ({ params }: Props) => {
       </div>
       {session && (
         <div className="flex flex-col gap-2 sm:flex-row sm:justify-end md:justify-center lg:justify-center">
+          <SelectAssignee />
           <IssueEditButton issueId={issue.id} />
           <IssueDeleteButton issueId={issue.id} />
         </div>

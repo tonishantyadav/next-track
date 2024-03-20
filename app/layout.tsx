@@ -5,6 +5,7 @@ import { cn } from '@/lib/utils'
 import { Inter as FontSans } from 'next/font/google'
 import './globals.css'
 import AuthProvider from './auth/AuthProvider'
+import QueryClientProvider from './QueryClientProvider'
 
 const fontSans = FontSans({
   subsets: ['latin'],
@@ -25,18 +26,20 @@ export default function RootLayout({
           fontSans.variable
         )}
       >
-        <AuthProvider>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <NavBar />
-            <main className="p-5">{children}</main>
-            <Toaster />
-          </ThemeProvider>
-        </AuthProvider>
+        <QueryClientProvider>
+          <AuthProvider>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+            >
+              <NavBar />
+              <main className="p-5">{children}</main>
+              <Toaster />
+            </ThemeProvider>
+          </AuthProvider>
+        </QueryClientProvider>
       </body>
     </html>
   )
