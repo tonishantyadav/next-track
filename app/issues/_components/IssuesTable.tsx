@@ -1,4 +1,3 @@
-import { IssueStatusBadge } from '@/app/issues/_components'
 import {
   Table,
   TableBody,
@@ -8,25 +7,51 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui'
-import { Issue } from '@prisma/client'
+import { IssueStatusBadge } from '@/app/issues/_components'
+import { Issue, Status } from '@prisma/client'
+import { ArrowUpIcon } from '@radix-ui/react-icons'
 import Link from 'next/link'
+import { useState } from 'react'
+
+export interface IssueQuery {
+  status: Status
+  orderBy: keyof Issue
+  sort: 'asc' | 'desc'
+  page: string
+}
 
 interface Props {
   issues: Issue[]
+  searchParams: IssueQuery
 }
 
-const IssuesTable = ({ issues }: Props) => {
+const IssuesTable = ({ issues, searchParams }: Props) => {
   return (
     <div className="my-5 rounded-lg border">
       <Table className="mb-2 w-full">
         <TableCaption>A list of recent issues.</TableCaption>
         <TableHeader>
           <TableRow className="flex">
-            <TableHead className="flex-1 text-lg">Title</TableHead>
-            <TableHead className="flex-1 text-lg">Status</TableHead>
-            <TableHead className="flex-1 text-lg">Created</TableHead>
+            {columns.map((column) => (
+              <TableHead className="flex-1 text-lg" key={column.value}>
+                <Link
+                  href={{
+                    query: {
+                      ...searchParams,
+                      orderBy: column.value,
+                    },
+                  }}
+                >
+                  {column.label}
+                </Link>
+                {column.value === searchParams.orderBy && (
+                  <ArrowUpIcon className="inline" />
+                )}
+              </TableHead>
+            ))}
           </TableRow>
         </TableHeader>
+
         <TableBody>
           {issues.map((issue, index) => (
             <TableRow className="flex" key={index}>
@@ -51,5 +76,16 @@ const IssuesTable = ({ issues }: Props) => {
     </div>
   )
 }
+
+const columns: {
+  label: string
+  value: keyof Issue
+}[] = [
+  { label: 'Title', value: 'title' },
+  { label: 'Status', value: 'status' },
+  { label: 'Created', value: 'created_at' },
+]
+
+export const columnNames = columns.map((column) => column.value)
 
 export default IssuesTable
