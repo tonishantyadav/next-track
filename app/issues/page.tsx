@@ -4,13 +4,29 @@ import {
   IssuesTable,
 } from '@/app/issues/_components'
 import prisma from '@/prisma/client'
+import { Status } from '@prisma/client'
 import { getServerSession } from 'next-auth'
 import authOptions from '../auth/auth-options'
 
-const IssuesPage = async () => {
+interface Props {
+  searchParams: {
+    status: Status
+  }
+}
+
+const IssuesPage = async ({ searchParams }: Props) => {
+  const statuses = Object.values(Status)
+  const status = statuses.includes(searchParams.status)
+    ? searchParams.status
+    : undefined
+
   const session = await getServerSession(authOptions)
 
-  const issues = await prisma.issue.findMany()
+  const issues = await prisma.issue.findMany({
+    where: {
+      status,
+    },
+  })
 
   return (
     <div>

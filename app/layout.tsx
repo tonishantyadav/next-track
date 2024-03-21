@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils'
 import { Inter as FontSans } from 'next/font/google'
 import './globals.css'
 import AuthProvider from './auth/AuthProvider'
-import QueryClientProvider from './QueryClientProvider'
+import QueryClientProvider from './queryclient-provider'
 
 const fontSans = FontSans({
   subsets: ['latin'],
