@@ -1,6 +1,5 @@
 export * from './IssueAction'
 export { default as IssueForm } from './IssueForm'
-export { default as IssuePreview } from './IssuePreview'
 export { default as IssueSkeletonLoading } from './IssueSkeletonLoading'
 export { default as IssueStatusBadge } from './IssueStatusBadge'
 export { default as IssuesTable } from './IssuesTable'

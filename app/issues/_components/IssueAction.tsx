@@ -36,7 +36,7 @@ export const IssueEditButton = ({ issueId }: { issueId: number }) => {
   return (
     <div className="my-2">
       <Link href={`/issues/${issueId}/edit`}>
-        <Button className="w-full">
+        <Button size="sm">
           <Pencil2Icon className="mr-2" /> Edit Issue
         </Button>
       </Link>
@@ -66,11 +66,7 @@ export const IssueDeleteButton = ({ issueId }: { issueId: number }) => {
       <AlertDialog>
         <AlertDialogTrigger asChild>
           <div className="mt-2">
-            <Button
-              variant="destructive"
-              className="w-full"
-              disabled={isDeleting}
-            >
+            <Button variant="destructive" disabled={isDeleting} size="sm">
               {isDeleting ? (
                 <Spinner />
               ) : (

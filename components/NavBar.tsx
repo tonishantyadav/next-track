@@ -8,6 +8,7 @@ import { usePathname } from 'next/navigation'
 import { FaBug } from 'react-icons/fa'
 import {
   Avatar,
+  AvatarFallback,
   AvatarImage,
   Button,
   DropdownMenuContent,
@@ -18,14 +19,16 @@ import {
 
 const NavBar = () => {
   return (
-    <nav className="sm:text-md container flex justify-between border-b py-4 md:text-lg lg:text-lg">
-      <div className="flex gap-10">
-        <NavLinks />
-      </div>
-      <div className="mt-2 cursor-pointer">
-        <AuthStatus />
-      </div>
-    </nav>
+    <div className="border-b">
+      <nav className="align container flex items-center gap-5 py-4 md:justify-between md:text-lg lg:justify-between lg:text-lg">
+        <div className="flex gap-10">
+          <NavLinks />
+        </div>
+        <div className="cursor-pointer">
+          <AuthStatus />
+        </div>
+      </nav>
+    </div>
   )
 }
 
@@ -38,17 +41,17 @@ const NavLinks = () => {
 
   return (
     <>
-      <ul className="flex items-center gap-2 text-slate-200">
+      <ul className="flex items-center text-slate-200">
         <li className="mr-2 hover:text-slate-400">
           <Link href="/">
             <FaBug />
           </Link>
         </li>
-        <li className="pt-1 hover:text-slate-400">
+        <li className=" hover:text-slate-400">
           <Link href="/">Next Track</Link>
         </li>
       </ul>
-      <ul className="flex items-center gap-5 pt-1 text-slate-200">
+      <ul className="flex items-center gap-5  text-slate-200">
         {otherLinks.map(({ label, href }) => (
           <li
             className={classNames({
@@ -81,9 +84,10 @@ const AuthStatus = () => {
               <Avatar>
                 <AvatarImage
                   src={session.user.image}
-                  alt="?"
                   referrerPolicy="no-referrer"
+                  className="sm"
                 />
+                <AvatarFallback>{'?'}</AvatarFallback>
               </Avatar>
             )}
           </DropdownMenuTrigger>
@@ -102,7 +106,7 @@ const AuthStatus = () => {
         </DropdownMenu>
       )}
       {status === 'unauthenticated' && (
-        <Link href="/api/auth/signin" className="hover:text-slate-400">
+        <Link href="/api/auth/signin" className=" hover:text-slate-400">
           Login
         </Link>
       )}

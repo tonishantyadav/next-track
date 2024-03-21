@@ -1,6 +1,6 @@
 'use client'
 
-import { IssueSchema } from '@/app/validation'
+import { issueSchema } from '@/app/validation'
 import MarkdownEditor from '@/components/MarkdownEditor'
 import { Button, Input, Spinner, useToast } from '@/components/ui'
 import {
@@ -19,11 +19,11 @@ import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 
-type IssueFormData = z.infer<typeof IssueSchema>
+type IssueFormData = z.infer<typeof issueSchema>
 
 const IssueForm = ({ issue }: { issue?: Issue }) => {
   const form = useForm<IssueFormData>({
-    resolver: zodResolver(IssueSchema),
+    resolver: zodResolver(issueSchema),
     defaultValues: {
       title: issue?.title || '',
       description: issue?.description || '',

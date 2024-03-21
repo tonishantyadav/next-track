@@ -2,12 +2,14 @@ import authOptions from '@/app/auth/auth-options'
 import {
   IssueDeleteButton,
   IssueEditButton,
-  IssuePreview,
+  IssueStatusBadge,
   SelectAssignee,
 } from '@/app/issues/_components'
+import MarkdownPreview from '@/components/MarkdownPreview'
 import prisma from '@/prisma/client'
 import { getServerSession } from 'next-auth'
 import { notFound } from 'next/navigation'
+import delay from 'delay'
 
 interface Props {
   params: {
@@ -25,15 +27,22 @@ const IssueDetailPage = async ({ params }: Props) => {
   if (!issue) notFound()
 
   return (
-    <div className="m-auto grid gap-1 md:grid-cols-3 lg:grid-cols-3">
-      <div className="p-1 md:col-span-2 lg:col-span-2">
-        <IssuePreview issue={issue} />
+    <div className="flex max-w-xl flex-col">
+      <div className="flex justify-between">
+        <h1 className="text-4xl font-semibold">{issue.title}</h1>
+        {session && <SelectAssignee issue={issue} />}
+      </div>
+      <div className="my-4 flex items-center gap-5">
+        <IssueStatusBadge status={issue.status} />
+        <p className="text-slate-400">{issue.created_at.toDateString()}</p>
+      </div>
+      <div>
+        <MarkdownPreview value={issue.description} />
       </div>
       {session && (
-        <div className="flex flex-col gap-2 sm:flex-row sm:justify-end md:justify-center lg:justify-center">
-          <SelectAssignee />
-          <IssueEditButton issueId={issue.id} />
+        <div className="flex justify-end gap-2">
           <IssueDeleteButton issueId={issue.id} />
+          <IssueEditButton issueId={issue.id} />
         </div>
       )}
     </div>
