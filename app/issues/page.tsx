@@ -1,4 +1,8 @@
-import { IssueAddButton, IssuesTable } from '@/app/issues/_components'
+import {
+  IssueAddButton,
+  IssueStatusFilter,
+  IssuesTable,
+} from '@/app/issues/_components'
 import prisma from '@/prisma/client'
 import { getServerSession } from 'next-auth'
 import authOptions from '../auth/auth-options'
@@ -10,7 +14,12 @@ const IssuesPage = async () => {
 
   return (
     <div>
-      {session && <IssueAddButton />}
+      {session && (
+        <div className="flex justify-end gap-3">
+          <IssueStatusFilter />
+          <IssueAddButton />
+        </div>
+      )}
       <IssuesTable issues={issues} />
     </div>
   )
