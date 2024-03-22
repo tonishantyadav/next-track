@@ -26,8 +26,7 @@ interface Props {
 const IssuesTable = ({ issues, searchParams }: Props) => {
   return (
     <div className="my-5 rounded-lg border">
-      <Table className="mb-2 w-full">
-        <TableCaption>A list of recent issues.</TableCaption>
+      <Table className="w-full">
         <TableHeader>
           <TableRow className="flex">
             {columns.map((column) => (
