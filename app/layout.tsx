@@ -10,7 +10,6 @@ import { ThemeProvider } from './ThemeProvider'
 const fontSans = FontSans({
   subsets: ['latin'],
   variable: '--font-sans',
-  preload: true,
 })
 
 export default function RootLayout({
