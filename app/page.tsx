@@ -9,7 +9,7 @@ export default function HomePage() {
     'create issues.',
     'assign issues.',
     'track issues.',
-    'filter issues and much more.',
+    'filter issues.',
   ]
 
   return (
@@ -22,7 +22,7 @@ export default function HomePage() {
         </div>
         <div>
           <p className="text-xs text-slate-300 md:text-lg lg:text-lg">
-            A GitHub-style issue tracker that allows you to{' '}
+            A GitHub-style issue tracker that facilitates you to{' '}
             <Typewriter words={words} cursor={true} loop={true} />
           </p>
         </div>{' '}

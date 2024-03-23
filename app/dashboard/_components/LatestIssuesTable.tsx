@@ -29,33 +29,33 @@ const LatestIssuesTable = async () => {
             {latestIssues.map((issue) => (
               <TableRow key={issue.id}>
                 <TableCell>
-                  <div className="flex items-center gap-1">
-                    <div className="p-1">
-                      <Avatar>
-                        {issue.assignedToUser?.image && (
-                          <AvatarImage
-                            src={issue.assignedToUser.image}
-                            className="sm"
-                          />
-                        )}
-                        <AvatarFallback>
-                          <FaUser />
-                        </AvatarFallback>
-                      </Avatar>
-                    </div>
-                    <div className="flex flex-col gap-1 p-1">
-                      <div>
-                        <Link href={`issues/${issue.id}`}>
+                  <Link href={`issues/${issue.id}`}>
+                    <div className="flex items-center gap-1">
+                      <div className="p-1">
+                        <Avatar>
+                          {issue.assignedToUser?.image && (
+                            <AvatarImage
+                              src={issue.assignedToUser.image}
+                              className="sm"
+                            />
+                          )}
+                          <AvatarFallback>
+                            <FaUser />
+                          </AvatarFallback>
+                        </Avatar>
+                      </div>
+                      <div className="flex flex-col gap-1 p-1">
+                        <div>
                           <p className="cursor-pointer text-lg font-medium hover:text-slate-400">
                             {issue.title}
                           </p>
-                        </Link>
-                      </div>
-                      <div>
-                        <IssueStatusBadge status={issue.status} />
+                        </div>
+                        <div>
+                          <IssueStatusBadge status={issue.status} />
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  </Link>
                 </TableCell>
               </TableRow>
             ))}
