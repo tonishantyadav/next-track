@@ -57,6 +57,7 @@ const IssuesPage = async ({ searchParams }: Props) => {
 }
 
 const pageSize = 10
+
 export const dynamic = 'force-dynamic'
 
 export default IssuesPage

@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation'
 import { FaBug } from 'react-icons/fa'
 import { Button, Skeleton } from './ui'
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar'
+import { FaUser } from 'react-icons/fa6'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -84,7 +85,9 @@ const AuthStatus = () => {
                   referrerPolicy="no-referrer"
                   className="sm"
                 />
-                <AvatarFallback>{'?'}</AvatarFallback>
+                <AvatarFallback>
+                  <FaUser />
+                </AvatarFallback>
               </Avatar>
             )}
           </DropdownMenuTrigger>

@@ -27,7 +27,7 @@ export default function HomePage() {
           </p>
         </div>{' '}
         <div>
-          <Link href="/issues">
+          <Link href="/dashboard">
             <Button className="mt-1 rounded-full">Get Started</Button>
           </Link>
         </div>
