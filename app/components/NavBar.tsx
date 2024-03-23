@@ -20,7 +20,7 @@ import {
 const NavBar = () => {
   return (
     <div className="border-b">
-      <nav className="align container flex items-center gap-5 py-4 md:justify-between md:text-lg lg:justify-between lg:text-lg">
+      <nav className="container flex justify-between p-4 text-md md:text-lg lg:text-lg">
         <div className="flex gap-10">
           <NavLinks />
         </div>
