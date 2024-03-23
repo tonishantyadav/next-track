@@ -1,5 +1,4 @@
 import {
-  Skeleton,
   Table,
   TableBody,
   TableCaption,
@@ -7,7 +6,8 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from '@/app/components/ui'
+} from '@/app/components/ui/table'
+import { Skeleton } from '../components/ui'
 import { IssueAddButton } from './_components/IssueAction'
 
 const LoadingIssuePage = () => {

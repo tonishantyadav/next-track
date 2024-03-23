@@ -1,11 +1,11 @@
 import { cn } from '@/lib/utils'
-import { ThemeProvider } from 'next-themes'
 import { Inter as FontSans } from 'next/font/google'
+import QueryClientProvider from './QueryClientProvider'
 import AuthProvider from './auth/AuthProvider'
 import NavBar from './components/NavBar'
 import { Toaster } from './components/ui'
 import './globals.css'
-import QueryClientProvider from './queryclient-provider'
+import { ThemeProvider } from './ThemeProvider'
 
 const fontSans = FontSans({
   subsets: ['latin'],
@@ -30,7 +30,7 @@ export default function RootLayout({
           <AuthProvider>
             <ThemeProvider
               attribute="class"
-              defaultTheme="system"
+              defaultTheme="dark"
               enableSystem
               disableTransitionOnChange
             >

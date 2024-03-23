@@ -1,26 +1,23 @@
 'use client'
 
-import { DropdownMenu } from '@radix-ui/react-dropdown-menu'
 import classNames from 'classnames'
 import { useSession } from 'next-auth/react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { FaBug } from 'react-icons/fa'
+import { Button, Skeleton } from './ui'
+import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar'
 import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-  Button,
+  DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-  Skeleton,
-} from './ui'
+} from './ui/dropdown-menu'
 
 const NavBar = () => {
   return (
     <div className="border-b">
-      <nav className="container flex justify-between p-4 text-md md:text-lg lg:text-lg">
+      <nav className="text-md container flex justify-between p-4 md:text-lg lg:text-lg">
         <div className="flex gap-10">
           <NavLinks />
         </div>
