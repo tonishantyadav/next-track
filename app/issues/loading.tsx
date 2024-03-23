@@ -7,7 +7,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from '@/components/ui'
+} from '@/app/components/ui'
 import { IssueAddButton } from './_components/IssueAction'
 
 const LoadingIssuePage = () => {

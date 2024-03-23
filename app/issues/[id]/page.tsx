@@ -5,7 +5,7 @@ import {
   IssueStatusBadge,
   SelectAssignee,
 } from '@/app/issues/_components'
-import MarkdownPreview from '@/components/MarkdownPreview'
+import MarkdownPreview from '@/app/components/MarkdownPreview'
 import prisma from '@/prisma/client'
 import { getServerSession } from 'next-auth'
 import { notFound } from 'next/navigation'

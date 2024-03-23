@@ -1,10 +1,10 @@
-import NavBar from '@/components/NavBar'
-import { ThemeProvider } from '@/components/theme-provider'
-import { Toaster } from '@/components/ui/toaster'
 import { cn } from '@/lib/utils'
+import { ThemeProvider } from 'next-themes'
 import { Inter as FontSans } from 'next/font/google'
-import './globals.css'
 import AuthProvider from './auth/AuthProvider'
+import NavBar from './components/NavBar'
+import { Toaster } from './components/ui'
+import './globals.css'
 import QueryClientProvider from './queryclient-provider'
 
 const fontSans = FontSans({

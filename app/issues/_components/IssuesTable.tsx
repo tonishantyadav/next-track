@@ -7,7 +7,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from '@/components/ui'
+} from '@/app/components/ui'
 import { Issue, Status } from '@prisma/client'
 import { ArrowDownIcon, ArrowUpIcon } from '@radix-ui/react-icons'
 import Link from 'next/link'

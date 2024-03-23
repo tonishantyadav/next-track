@@ -1,8 +1,8 @@
 'use client'
 
 import { postIssueSchema } from '@/app/validation'
-import MarkdownEditor from '@/components/MarkdownEditor'
-import { Button, Input, Spinner, useToast } from '@/components/ui'
+import MarkdownEditor from '@/app/components/MarkdownEditor'
+import { Button, Input, Spinner, useToast } from '@/app/components/ui'
 import {
   Form,
   FormControl,
@@ -10,7 +10,7 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from '@/components/ui/form'
+} from '@/app/components/ui/form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Issue } from '@prisma/client'
 import axios from 'axios'

@@ -1,6 +1,6 @@
 'use client'
 
-import { Skeleton, toast } from '@/components/ui'
+import { Skeleton, toast } from '@/app/components/ui'
 import {
   Select,
   SelectContent,
@@ -9,7 +9,7 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from '@/components/ui/select'
+} from '@/app/components/ui/select'
 import { Issue, User } from '@prisma/client'
 import { useQuery } from '@tanstack/react-query'
 

@@ -1,8 +1,8 @@
 'use client'
 
-import { Button } from '@/components/ui'
 import Link from 'next/link'
 import { Typewriter } from 'react-simple-typewriter'
+import { Button } from './components/ui'
 
 export default function Home() {
   const words = [
@@ -21,7 +21,7 @@ export default function Home() {
           </h1>
         </div>
         <div className="min-h-10">
-          <p className=" text-slate-300 text-lg">
+          <p className=" text-lg text-slate-300">
             A GitHub-style issue tracker that let you to.{' '}
             <Typewriter words={words} cursor={true} loop={true} />
           </p>

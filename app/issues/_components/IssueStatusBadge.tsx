@@ -1,4 +1,4 @@
-import { Badge } from '@/components/ui'
+import { Badge } from '@/app/components/ui'
 import { Status } from '@prisma/client'
 
 type BadgeVariants = 'green' | 'orange' | 'red' | 'default' | 'outline'
