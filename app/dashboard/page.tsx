@@ -1,7 +1,9 @@
 import prisma from '@/prisma/client'
-import { IssueSummary, LatestIssuesTable } from './_components'
+import { LatestIssuesTable } from './_components'
+import IssueChart from './_components/IssueChart'
+import IssueCountCard, { CountByStatus } from './_components/IssueCountCard'
 
-const DashboardPage = async () => {
+export const DashboardPage = async () => {
   const issues = await prisma.issue.findMany()
 
   const open = issues.filter((issue) => issue.status === 'OPEN').length
@@ -10,10 +12,13 @@ const DashboardPage = async () => {
     (issue) => issue.status === 'IN_PROGRESS'
   ).length
 
+  const countByStatus: CountByStatus = { open, closed, inProgress }
+
   return (
-    <div className="grid gap-2 md:grid-cols-2 lg:grid-cols-2">
-      <div>
-        <IssueSummary open={open} inProgress={inProgress} closed={closed} />
+    <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-2">
+      <div className="flex flex-col justify-between gap-3">
+        <IssueCountCard countByStatus={countByStatus} />
+        <IssueChart countByStatus={countByStatus} />
       </div>
       <div>
         <LatestIssuesTable />

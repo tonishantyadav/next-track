@@ -1,2 +1,2 @@
 export { default as LatestIssuesTable } from './LatestIssuesTable'
-export { default as IssueSummary } from './IssueSummary'
+export { default as IssueCountCard } from './IssueCountCard'
