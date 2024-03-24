@@ -10,8 +10,8 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from '@/app/components/ui/alert-dialog'
-import { Button, Spinner } from '@/app/components/ui'
+} from '@/components/ui/alert-dialog'
+import { Button, Spinner } from '@/components/ui'
 import { Pencil2Icon, PlusIcon, TrashIcon } from '@radix-ui/react-icons'
 import axios from 'axios'
 import Link from 'next/link'

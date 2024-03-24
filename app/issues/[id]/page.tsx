@@ -1,5 +1,5 @@
 import authOptions from '@/app/auth/auth-options'
-import MarkdownPreview from '@/app/components/MarkdownPreview'
+import MarkdownPreview from '@/components/MarkdownPreview'
 import {
   IssueDeleteButton,
   IssueEditButton,

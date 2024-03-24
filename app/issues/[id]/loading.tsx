@@ -1,4 +1,4 @@
-import { Skeleton } from '@/app/components/ui'
+import { Skeleton } from '@/components/ui'
 
 const IssueDetailPageLoading = () => {
   return (

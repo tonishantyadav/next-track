@@ -6,7 +6,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@/app/components/ui/select'
+} from '@/components/ui/select'
 import { Status } from '@prisma/client'
 import { useRouter, useSearchParams } from 'next/navigation'
 

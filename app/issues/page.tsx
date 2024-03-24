@@ -7,7 +7,7 @@ import prisma from '@/prisma/client'
 import { Status } from '@prisma/client'
 import { getServerSession } from 'next-auth'
 import authOptions from '../auth/auth-options'
-import Pagination from '../components/Pagination'
+import Pagination from '../../components/Pagination'
 import { IssueQuery, columnNames } from './_components/IssuesTable'
 import { Metadata } from 'next'
 
