@@ -47,12 +47,16 @@ const IssuesPage = async ({ searchParams }: Props) => {
           <IssueAddButton />
         </div>
       )}
-      <IssuesTable issues={issues} searchParams={searchParams} />
-      <Pagination
-        itemCount={issuesCount}
-        pageSize={pageSize}
-        currentPage={currentPage}
-      />
+      {issues && (
+        <>
+          <IssuesTable issues={issues} searchParams={searchParams} />
+          <Pagination
+            itemCount={issuesCount}
+            pageSize={pageSize}
+            currentPage={currentPage}
+          />
+        </>
+      )}
     </div>
   )
 }

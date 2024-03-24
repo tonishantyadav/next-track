@@ -19,13 +19,13 @@ export default function HomePage() {
             Welcome to <span className="text-glow">Next Track</span>
           </h1>
         </div>
-        <div>
+        <div className="h-6">
           <p className="text-xs text-slate-300 md:text-lg lg:text-lg">
             A GitHub-style issue tracker that facilitates you to{' '}
             <TypewriterEffect words={words} />
           </p>
         </div>{' '}
-        <div>
+        <div className="pt-1">
           <Link href="/dashboard">
             <Button className="mt-1 rounded-full">Get Started</Button>
           </Link>

@@ -105,7 +105,10 @@ const AuthStatus = () => {
         </DropdownMenu>
       )}
       {status === 'unauthenticated' && (
-        <Link href="/api/auth/signin" className=" hover:text-slate-400">
+        <Link
+          href="/api/auth/signin"
+          className=" text-md text-slate-300 hover:text-slate-200 md:text-lg lg:text-lg"
+        >
           Login
         </Link>
       )}
