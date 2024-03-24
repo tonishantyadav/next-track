@@ -1,7 +1,6 @@
-'use client'
-
+import { Metadata } from 'next'
 import Link from 'next/link'
-import { Typewriter } from 'react-simple-typewriter'
+import TypewriterEffect from './components/TypewriterEffect'
 import { Button } from './components/ui'
 
 export default function HomePage() {
@@ -23,7 +22,7 @@ export default function HomePage() {
         <div>
           <p className="text-xs text-slate-300 md:text-lg lg:text-lg">
             A GitHub-style issue tracker that facilitates you to{' '}
-            <Typewriter words={words} cursor={true} loop={true} />
+            <TypewriterEffect words={words} />
           </p>
         </div>{' '}
         <div>
@@ -34,4 +33,10 @@ export default function HomePage() {
       </div>
     </>
   )
+}
+
+export const metadata: Metadata = {
+  title: 'Next Track - Homepage',
+  description:
+    'A GitHub-style issue tracker that facilitates you to create issues, assign issues, track issues, filter issues and much more.',
 }

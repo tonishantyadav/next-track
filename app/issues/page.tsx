@@ -9,6 +9,7 @@ import { getServerSession } from 'next-auth'
 import authOptions from '../auth/auth-options'
 import Pagination from '../components/Pagination'
 import { IssueQuery, columnNames } from './_components/IssuesTable'
+import { Metadata } from 'next'
 
 interface Props {
   searchParams: IssueQuery
@@ -59,5 +60,10 @@ const IssuesPage = async ({ searchParams }: Props) => {
 const pageSize = 10
 
 export const dynamic = 'force-dynamic'
+
+export const metadata: Metadata = {
+  title: 'Next Track - Issues',
+  description: 'View all project issues.',
+}
 
 export default IssuesPage

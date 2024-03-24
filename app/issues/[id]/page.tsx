@@ -1,15 +1,14 @@
 import authOptions from '@/app/auth/auth-options'
+import MarkdownPreview from '@/app/components/MarkdownPreview'
 import {
   IssueDeleteButton,
   IssueEditButton,
   IssueStatusBadge,
   SelectAssignee,
 } from '@/app/issues/_components'
-import MarkdownPreview from '@/app/components/MarkdownPreview'
 import prisma from '@/prisma/client'
 import { getServerSession } from 'next-auth'
 import { notFound } from 'next/navigation'
-import delay from 'delay'
 
 interface Props {
   params: {
@@ -47,6 +46,16 @@ const IssueDetailPage = async ({ params }: Props) => {
       )}
     </div>
   )
+}
+
+export async function generateMetadata({ params }: Props) {
+  const issue = await prisma.issue.findUnique({
+    where: { id: parseInt(params.id) },
+  })
+  return {
+    title: 'Next Track - ' + issue?.title,
+    description: 'Details of issue' + issue?.id,
+  }
 }
 
 export default IssueDetailPage

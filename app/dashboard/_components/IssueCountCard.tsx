@@ -32,7 +32,7 @@ const IssueCountCard = ({
   return (
     <div className="flex gap-2">
       {issues.map((issue, index) => (
-        <Card>
+        <Card key={index}>
           <Link
             href={`/issues?status=${issue.status}`}
             className="flex items-center justify-between gap-2 p-5"
