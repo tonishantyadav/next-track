@@ -4,7 +4,7 @@ import IssueChart from './_components/IssueChart'
 import IssueCountCard, { CountByStatus } from './_components/IssueCountCard'
 import { Metadata } from 'next'
 
-export const DashboardPage = async () => {
+const DashboardPage = async () => {
   const issues = await prisma.issue.findMany()
 
   const open = issues.filter((issue) => issue.status === 'OPEN').length
