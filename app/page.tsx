@@ -37,6 +37,5 @@ export default function HomePage() {
 
 export const metadata: Metadata = {
   title: 'Next Track - Homepage',
-  description:
-    'A GitHub-style issue tracker that facilitates you to create issues, assign issues, track issues, filter issues and much more.',
+  description: 'A GitHub-style issue tracker that facilitates you to create issues, assign issues, track issues, filter issues and much more.',
 }
