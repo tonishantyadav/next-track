@@ -40,22 +40,21 @@ const NavLinks = () => {
   return (
     <>
       <ul className="flex items-center text-slate-200">
-        <li className="mr-2 hover:text-slate-400">
+        <li className="mr-2">
           <Link href="/">
             <FaBug />
           </Link>
         </li>
-        <li className=" hover:text-slate-400">
+        <li>
           <Link href="/">Next Track</Link>
         </li>
       </ul>
-      <ul className="flex items-center gap-5  text-slate-200">
+      <ul className="flex items-center gap-5  text-slate-300">
         {otherLinks.map(({ label, href }) => (
           <li
             className={classNames({
-              'underline decoration-primary hover:text-slate-400':
-                path === href,
-              'hover:text-slate-400': true,
+              'hover:text-slate-200': true,
+              'text-slate-200': path === href,
             })}
             key={href}
           >
