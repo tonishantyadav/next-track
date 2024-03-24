@@ -18,7 +18,7 @@ import {
 const NavBar = () => {
   return (
     <div className="border-b">
-      <nav className="text-md container flex justify-between p-4 md:text-lg lg:text-lg">
+      <nav className="text-md container flex justify-between p-5 md:text-lg lg:text-lg">
         <div className="flex gap-10">
           <NavLinks />
         </div>

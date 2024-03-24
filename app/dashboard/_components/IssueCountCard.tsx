@@ -32,15 +32,15 @@ const IssueCountCard = ({
   return (
     <div className="flex gap-2">
       {issues.map((issue, index) => (
-        <Card key={index}>
+        <Card key={index} className="max-w-xs">
           <Link
             href={`/issues?status=${issue.status}`}
             className="flex items-center justify-between gap-2 p-5"
           >
-            <p className="text-md font-medium hover:text-gray-500 md:text-lg lg:text-2xl">
+            <p className="text-sm font-medium hover:text-gray-500 lg:text-xl xl:text-2xl">
               {issue.label}
             </p>
-            <p className="text-sm text-slate-400 md:text-xl lg:text-4xl">
+            <p className="text-sm text-slate-400 lg:text-xl xl:text-2xl">
               {issue.value}
             </p>
           </Link>

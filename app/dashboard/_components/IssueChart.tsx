@@ -12,7 +12,7 @@ const IssueChart = ({ countByStatus }: { countByStatus: CountByStatus }) => {
   ]
   return (
     <Card>
-      <ResponsiveContainer width="100%" height={350}>
+      <ResponsiveContainer width="100%" height={400}>
         <BarChart data={data}>
           <XAxis dataKey={'label'} />
           <YAxis />
